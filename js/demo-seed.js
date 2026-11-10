@@ -23,6 +23,11 @@ const DemoSeed = (() => {
     ['Licuado de fresa', 18, 'Bebidas', 'licuado'],
   ];
 
+  // Si cambian los datos de ejemplo (fotos, productos), subir este número:
+  // los dispositivos con datos de una versión anterior se renuevan al abrir.
+  const VERSION_DATOS = '2';
+  const CLAVE_VERSION = 'antojos_datos_version';
+
   const aleatorio = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
   async function cargarFoto(nombre) {
@@ -136,16 +141,24 @@ const DemoSeed = (() => {
     };
   }
 
-  // Carga los datos de ejemplo solo si todavía no hay ningún usuario.
+  function marcarVersion() {
+    try { localStorage.setItem(CLAVE_VERSION, VERSION_DATOS); } catch (err) { /* sin almacenamiento */ }
+  }
+
+  // Carga los datos de ejemplo si no hay usuarios o son de una versión anterior.
   async function sembrarSiVacio() {
-    if (await Auth.existeAlgunUsuario()) return false;
+    let version = null;
+    try { version = localStorage.getItem(CLAVE_VERSION); } catch (err) { version = null; }
+    if ((await Auth.existeAlgunUsuario()) && version === VERSION_DATOS) return false;
     await DB.reemplazarTodo(await construirDatos());
+    marcarVersion();
     return true;
   }
 
   // Borra todo lo que se haya hecho y vuelve a cargar los datos de ejemplo.
   async function restablecer() {
     await DB.reemplazarTodo(await construirDatos());
+    marcarVersion();
     Auth.logout();
   }
 

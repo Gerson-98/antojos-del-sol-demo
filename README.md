@@ -5,9 +5,9 @@ Es una web instalable (PWA): sin servidor ni cuentas, todo se guarda en el propi
 
 Basada en el sistema de Los Biónicos, **sin códigos de vendedor** para que vender sea rápido: tocar productos → elegir pago → cobrar.
 
-- 14 productos de ejemplo con ilustraciones propias (Desayunos, Antojitos, Chocobananos, Helados, Bebidas).
+- 14 productos de ejemplo con fotos reales de Wikimedia Commons (ver `creditos.html`) (Desayunos, Antojitos, Chocobananos, Helados, Bebidas).
 - Datos de ejemplo (ventas de los últimos días y caja abierta) cargados al abrir por primera vez.
-- Usuarios: administrador `demo` / `demo`, cajero `caja` / `caja`. Entra solo la primera vez.
+- Usuario `demo`, contraseña `demo`. Entra solo la primera vez.
 - "Restablecer datos de ejemplo" en la pantalla de acceso (después de pulsar **Salir**).
 
 ## Probar en la computadora

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'antojos-del-sol-v1';
+const CACHE_NAME = 'antojos-del-sol-v2';
 
 const ARCHIVOS_ESTATICOS = [
   './',
