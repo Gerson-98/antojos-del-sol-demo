@@ -1,10 +1,11 @@
-const CACHE_NAME = 'antojos-del-sol-v2';
+const CACHE_NAME = 'antojos-del-sol-v3';
 
 const ARCHIVOS_ESTATICOS = [
   './',
   './index.html',
   './manifest.json',
   './css/styles.css',
+  './css/movil.css',
   './js/sha256.js',
   './js/db.js',
   './js/auth.js',
@@ -22,6 +23,7 @@ const ARCHIVOS_ESTATICOS = [
   './js/respaldo.js',
   './js/registrar-sw.js',
   './js/demo-seed.js',
+  './js/venta-movil.js',
   './pages/inicio.html',
   './pages/productos.html',
   './pages/venta.html',
